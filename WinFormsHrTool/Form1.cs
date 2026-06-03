@@ -1,10 +1,13 @@
-using System.ComponentModel;
+// Needed for BindingList — lives in System.ComponentModel
+using System.ComponentModel; 
 namespace WinFormsHrTool
 {
 
 
     public partial class Form1 : Form
     {
+        // BindingList is like List<Employee> but automatically updates the UI
+        // when items are added or removed — perfect for DataGridView binding
         BindingList<Employee> employees = new BindingList<Employee>();
 
 
@@ -46,11 +49,23 @@ namespace WinFormsHrTool
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if(dataGridView1.CurrentRow != null)
+        {    // Check if a row is actually selected to avoid crashes
+            if (dataGridView1.CurrentRow != null)
             {
+                // Remove the employee at the selected rows position in the list
                 employees.RemoveAt(dataGridView1.CurrentRow.Index);
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Filter the employees list — keep only those whose Name contains the search text
+            // Where() loops through each employee (x) and checks the condition
+            var search = employees.Where(x => x.Name.Contains(txtSearch.Text));
+
+            // Convert the filtered result to a List and bind it to the grid
+            // ToList() is needed because DataSource expects a List, not a raw query
+            dataGridView1.DataSource = search.ToList();
         }
     }
 }

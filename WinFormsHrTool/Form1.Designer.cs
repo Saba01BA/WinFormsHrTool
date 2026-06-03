@@ -37,6 +37,8 @@
             btnAdd = new Button();
             dataGridView1 = new DataGridView();
             btnDelete = new Button();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -102,16 +104,16 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 71);
+            dataGridView1.Location = new Point(12, 169);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(900, 513);
+            dataGridView1.Size = new Size(1047, 513);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(12, 606);
+            btnDelete.Location = new Point(947, 31);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 8;
@@ -119,11 +121,31 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(595, 129);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(333, 31);
+            txtSearch.TabIndex = 9;
+            // 
+            // btnSearch
+            // 
+            btnSearch.AllowDrop = true;
+            btnSearch.Location = new Point(947, 129);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(112, 34);
+            btnSearch.TabIndex = 10;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 668);
+            ClientSize = new Size(1089, 734);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
             Controls.Add(btnDelete);
             Controls.Add(dataGridView1);
             Controls.Add(btnAdd);
@@ -151,5 +173,7 @@
         private Button btnAdd;
         private DataGridView dataGridView1;
         private Button btnDelete;
+        private TextBox txtSearch;
+        private Button btnSearch;
     }
 }
