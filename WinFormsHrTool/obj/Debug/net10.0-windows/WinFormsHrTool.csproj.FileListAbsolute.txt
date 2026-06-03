@@ -14,3 +14,4 @@ C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-w
 C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.pdb
 C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.genruntimeconfig.cache
 C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\ref\WinFormsHrTool.dll
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.sourcelink.json

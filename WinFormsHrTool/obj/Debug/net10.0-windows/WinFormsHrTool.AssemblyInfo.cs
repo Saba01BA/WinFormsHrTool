@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinFormsHrTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa0f2b859c5ce1c925bd69dd858470482f27b490")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinFormsHrTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinFormsHrTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

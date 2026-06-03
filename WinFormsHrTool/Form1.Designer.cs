@@ -36,6 +36,7 @@
             txtSalary = new TextBox();
             btnAdd = new Button();
             dataGridView1 = new DataGridView();
+            btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -101,18 +102,29 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(13, 124);
+            dataGridView1.Location = new Point(12, 71);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(900, 513);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(12, 606);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(112, 34);
+            btnDelete.TabIndex = 8;
+            btnDelete.Text = "Delete Employee";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 668);
+            Controls.Add(btnDelete);
             Controls.Add(dataGridView1);
             Controls.Add(btnAdd);
             Controls.Add(txtSalary);
@@ -138,5 +150,6 @@
         private TextBox txtSalary;
         private Button btnAdd;
         private DataGridView dataGridView1;
+        private Button btnDelete;
     }
 }

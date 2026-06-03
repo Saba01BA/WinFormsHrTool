@@ -44,5 +44,13 @@ namespace WinFormsHrTool
         {
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.CurrentRow != null)
+            {
+                employees.RemoveAt(dataGridView1.CurrentRow.Index);
+            }
+        }
     }
 }
