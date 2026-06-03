@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "WinFormsHrTool/1.0.0": {
+        "runtime": {
+          "WinFormsHrTool.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WinFormsHrTool/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

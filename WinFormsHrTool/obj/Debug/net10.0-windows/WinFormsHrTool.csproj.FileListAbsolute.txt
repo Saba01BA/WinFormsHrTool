@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\bin\Debug\net10.0-windows\WinFormsHrTool.exe
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\bin\Debug\net10.0-windows\WinFormsHrTool.deps.json
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\bin\Debug\net10.0-windows\WinFormsHrTool.runtimeconfig.json
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\bin\Debug\net10.0-windows\WinFormsHrTool.dll
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\bin\Debug\net10.0-windows\WinFormsHrTool.pdb
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.Form1.resources
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.AssemblyInfo.cs
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.dll
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\refint\WinFormsHrTool.dll
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.pdb
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\WinFormsHrTool.genruntimeconfig.cache
+C:\Users\User\Desktop\Projects\WinFormsHrTool\WinFormsHrTool\obj\Debug\net10.0-windows\ref\WinFormsHrTool.dll
