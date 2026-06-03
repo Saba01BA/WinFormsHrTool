@@ -1,3 +1,5 @@
+// Needed for SAVING the Data.
+using System.Text.Json;
 // Needed for BindingList — lives in System.ComponentModel
 using System.ComponentModel; 
 namespace WinFormsHrTool
@@ -18,10 +20,26 @@ namespace WinFormsHrTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Bind the employees list to the grid on startup
+            // From now on, any change to employees automatically reflects in the grid
             dataGridView1.DataSource = employees;
 
-        }
+            // Check if a save file exists before trying to read it
+            if (File.Exists("employees.json"))
+            {
+                // Read the raw JSON text from the file
+                string json = File.ReadAllText("employees.json");
 
+                // Convert the JSON string back into a List<Employee>
+                var list = JsonSerializer.Deserialize<List<Employee>>(json);
+
+                // Add each employee from the file into our BindingList
+                foreach (var item in list)
+                {
+                    employees.Add(item);
+                }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
@@ -66,6 +84,15 @@ namespace WinFormsHrTool
             // Convert the filtered result to a List and bind it to the grid
             // ToList() is needed because DataSource expects a List, not a raw query
             dataGridView1.DataSource = search.ToList();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Serialize the entire employees list into a JSON string
+            string json = JsonSerializer.Serialize(employees);
+
+            // Write the JSON string to a file — saved in the same folder as the app
+            File.WriteAllText("employees.json", json);
         }
     }
 }
