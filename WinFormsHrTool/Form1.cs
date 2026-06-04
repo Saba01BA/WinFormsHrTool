@@ -77,6 +77,13 @@ namespace WinFormsHrTool
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                dataGridView1.DataSource = employees;
+            }
+
+            else
+            {
             // Filter the employees list — keep only those whose Name contains the search text
             // Where() loops through each employee (x) and checks the condition
             var search = employees.Where(x => x.Name.Contains(txtSearch.Text));
@@ -84,6 +91,7 @@ namespace WinFormsHrTool
             // Convert the filtered result to a List and bind it to the grid
             // ToList() is needed because DataSource expects a List, not a raw query
             dataGridView1.DataSource = search.ToList();
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,6 +101,30 @@ namespace WinFormsHrTool
 
             // Write the JSON string to a file — saved in the same folder as the app
             File.WriteAllText("employees.json", json);
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                var toChange = employees[dataGridView1.CurrentRow.Index];
+                txtName.Text = toChange.Name;
+                txtDepartment.Text = toChange.Department;
+                txtSalary.Text = Convert.ToString(toChange.Salary);
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var toChange = employees[dataGridView1.CurrentRow.Index];
+            toChange.Name = txtName.Text;
+            toChange.Department = txtDepartment.Text;
+            toChange.Salary = decimal.Parse(txtSalary.Text);
+            btnSave.Enabled = false;
+            txtName.Text = "";
+            txtSalary.Text = "";
+            txtDepartment.Text = "";
         }
     }
 }

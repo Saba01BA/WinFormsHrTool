@@ -39,6 +39,7 @@
             btnDelete = new Button();
             txtSearch = new TextBox();
             btnSearch = new Button();
+            btnSave = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -110,6 +111,7 @@
             dataGridView1.Size = new Size(1047, 513);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // btnDelete
             // 
@@ -139,11 +141,23 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnSave
+            // 
+            btnSave.Enabled = false;
+            btnSave.Location = new Point(12, 127);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(140, 34);
+            btnSave.TabIndex = 11;
+            btnSave.Text = "Save Changes";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1089, 734);
+            Controls.Add(btnSave);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(btnDelete);
@@ -176,5 +190,6 @@
         private Button btnDelete;
         private TextBox txtSearch;
         private Button btnSearch;
+        private Button btnSave;
     }
 }
