@@ -40,6 +40,7 @@
             txtSearch = new TextBox();
             btnSearch = new Button();
             btnSave = new Button();
+            btnExport = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -152,12 +153,23 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(13, 688);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(188, 34);
+            btnExport.TabIndex = 12;
+            btnExport.Text = "📊 Export to CSV";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1089, 734);
+            ClientSize = new Size(1078, 787);
+            Controls.Add(btnExport);
             Controls.Add(btnSave);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
@@ -192,5 +204,6 @@
         private TextBox txtSearch;
         private Button btnSearch;
         private Button btnSave;
+        private Button btnExport;
     }
 }

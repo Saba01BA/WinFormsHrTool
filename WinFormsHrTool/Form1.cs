@@ -121,13 +121,13 @@ namespace WinFormsHrTool
 
             else
             {
-            // Filter the employees list — keep only those whose Name contains the search text
-            // Where() loops through each employee (x) and checks the condition
-            var search = employees.Where(x => x.Name.Contains(txtSearch.Text));
+                // Filter the employees list — keep only those whose Name contains the search text
+                // Where() loops through each employee (x) and checks the condition
+                var search = employees.Where(x => x.Name.Contains(txtSearch.Text));
 
-            // Convert the filtered result to a List and bind it to the grid
-            // ToList() is needed because DataSource expects a List, not a raw query
-            dataGridView1.DataSource = search.ToList();
+                // Convert the filtered result to a List and bind it to the grid
+                // ToList() is needed because DataSource expects a List, not a raw query
+                dataGridView1.DataSource = search.ToList();
             }
         }
 
@@ -162,6 +162,16 @@ namespace WinFormsHrTool
             txtName.Text = "";
             txtSalary.Text = "";
             txtDepartment.Text = "";
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string csv = "Name,Department,Salary\n";
+            foreach (var emp in employees)
+            {
+                csv += emp.Name + "," + emp.Department + "," + emp.Salary+"\n";
+                File.WriteAllText("employees.csv", csv);
+            }
         }
     }
 }
