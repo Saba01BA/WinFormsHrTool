@@ -15,11 +15,48 @@ namespace WinFormsHrTool
 
         public Form1()
         {
+
             InitializeComponent();
+            this.Text = "HR Management Tool";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.RowHeadersVisible = false;
+            this.BackColor = ColorTranslator.FromHtml("#2b2b2b");
+            // TextBoxes
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox tb)
+                {
+                    tb.BackColor = ColorTranslator.FromHtml("#3c3c3c");
+                    tb.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                }
+                if (c is Label lbl)
+                {
+                    lbl.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                }
+                if (c is Button btn)
+                {
+                    btn.BackColor = ColorTranslator.FromHtml("#0078d4");
+                    btn.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 0;
+                }
+            }
+
+            // DataGridView styling
+            dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#2b2b2b");
+            dataGridView1.GridColor = ColorTranslator.FromHtml("#555555");
+            dataGridView1.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#3c3c3c");
+            dataGridView1.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#0078d4");
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            dataGridView1.EnableHeadersVisualStyles = false;
+            this.Font = new Font("Segoe UI", 10f, FontStyle.Regular);
             // Bind the employees list to the grid on startup
             // From now on, any change to employees automatically reflects in the grid
             dataGridView1.DataSource = employees;
