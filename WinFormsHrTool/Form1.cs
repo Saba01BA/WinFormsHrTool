@@ -79,17 +79,27 @@ namespace WinFormsHrTool
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtName.Text)||string.IsNullOrEmpty(txtDepartment.Text))
+            {
+                MessageBox.Show("Name or Department Can not be Empty");
+                return;
+            }
+
+            else if (!decimal.TryParse(txtSalary.Text, out decimal salary))
+            {
+               MessageBox.Show("Salary Must be a Number");
+                return;
+            }
+            else { 
             string name = txtName.Text;
             string department = txtDepartment.Text;
-            decimal salary = decimal.Parse(txtSalary.Text);
-
             Employee emp = new Employee();
             emp.Name = name;
             emp.Salary = salary;
             emp.Department = department;
 
             employees.Add(emp);
-
+            }
 
         }
 
