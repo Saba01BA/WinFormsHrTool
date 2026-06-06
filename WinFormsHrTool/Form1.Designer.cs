@@ -41,6 +41,7 @@
             btnSearch = new Button();
             btnSave = new Button();
             btnExport = new Button();
+            cmbDepartment = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -163,12 +164,22 @@
             btnExport.UseVisualStyleBackColor = true;
             btnExport.Click += btnExport_Click;
             // 
+            // cmbDepartment
+            // 
+            cmbDepartment.FormattingEnabled = true;
+            cmbDepartment.Location = new Point(395, 131);
+            cmbDepartment.Name = "cmbDepartment";
+            cmbDepartment.Size = new Size(182, 33);
+            cmbDepartment.TabIndex = 13;
+            cmbDepartment.SelectedIndexChanged += cmbDepartment_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1078, 787);
+            Controls.Add(cmbDepartment);
             Controls.Add(btnExport);
             Controls.Add(btnSave);
             Controls.Add(btnSearch);
@@ -205,5 +216,6 @@
         private Button btnSearch;
         private Button btnSave;
         private Button btnExport;
+        private ComboBox cmbDepartment;
     }
 }

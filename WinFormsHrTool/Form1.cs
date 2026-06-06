@@ -12,6 +12,18 @@ namespace WinFormsHrTool
         // when items are added or removed — perfect for DataGridView binding
         BindingList<Employee> employees = new BindingList<Employee>();
 
+        private void RefreshDepartmentFilter()
+        {
+            // Go through all employees, grab just the Department property from each one
+            // Distinct() removes duplicates — if 3 people are in Sales, "Sales" appears once
+            var departments = employees.Select(x => x.Department).Distinct().ToList();
+
+            // Add "All" at the top so user can reset the filter
+            departments.Insert(0, "All");
+
+            // Bind the list to the dropdown
+            cmbDepartment.DataSource = departments;
+        }
 
         public Form1()
         {
@@ -22,6 +34,7 @@ namespace WinFormsHrTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.RowHeadersVisible = false;
@@ -46,8 +59,9 @@ namespace WinFormsHrTool
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.FlatAppearance.BorderSize = 0;
                 }
+                
             }
-
+           
             // DataGridView styling
             dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#2b2b2b");
             dataGridView1.GridColor = ColorTranslator.FromHtml("#555555");
@@ -76,10 +90,11 @@ namespace WinFormsHrTool
                     employees.Add(item);
                 }
             }
+            RefreshDepartmentFilter();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text)||string.IsNullOrEmpty(txtDepartment.Text))
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtDepartment.Text))
             {
                 MessageBox.Show("Name or Department Can not be Empty");
                 return;
@@ -87,19 +102,22 @@ namespace WinFormsHrTool
 
             else if (!decimal.TryParse(txtSalary.Text, out decimal salary))
             {
-               MessageBox.Show("Salary Must be a Number");
+                MessageBox.Show("Salary Must be a Number");
                 return;
             }
-            else { 
-            string name = txtName.Text;
-            string department = txtDepartment.Text;
-            Employee emp = new Employee();
-            emp.Name = name;
-            emp.Salary = salary;
-            emp.Department = department;
+            else
+            {
+                string name = txtName.Text;
+                string department = txtDepartment.Text;
+                Employee emp = new Employee();
+                emp.Name = name;
+                emp.Salary = salary;
+                emp.Department = department;
 
-            employees.Add(emp);
+                employees.Add(emp);
             }
+
+            RefreshDepartmentFilter();
 
         }
 
@@ -179,8 +197,25 @@ namespace WinFormsHrTool
             string csv = "Name,Department,Salary\n";
             foreach (var emp in employees)
             {
-                csv += emp.Name + "," + emp.Department + "," + emp.Salary+"\n";
-                File.WriteAllText("employees.csv", csv);
+                csv += emp.Name + "," + emp.Department + "," + emp.Salary + "\n";
+                
+            }
+            File.WriteAllText("employees.csv", csv);
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // If "All" is selected, show the full BindingList
+            if (cmbDepartment.SelectedItem.ToString() == "All")
+            {
+                dataGridView1.DataSource = employees;
+            }
+            else
+            {
+                // Filter employees where Department exactly matches the selected dropdown value
+                // == used here (not Contains) because department must be an exact match
+                var filtered = employees.Where(x => x.Department == cmbDepartment.SelectedItem.ToString());
+                dataGridView1.DataSource = filtered.ToList();
             }
         }
     }
